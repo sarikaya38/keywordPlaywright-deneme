@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         NODEJS_HOME = tool name: 'NodeJS 14'
-        PATH = "${NODEJS_HOME}/bin:${env.PATH}"
+        PATH = "${NODEJS_HOME}\\bin;${env.PATH}"
     }
 
     stages {
@@ -15,19 +15,17 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
-                sh 'npx playwright install'
+                bat 'npm install'
+                bat 'npx playwright install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npx playwright test'
+                bat 'npx playwright test'
             }
         }
     }
-
-    
 
     post {
         always {
