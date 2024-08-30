@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sarikaya38/playwrightKeyWord.git', credentialsId: 'your-credentials-id'
+                git branch: 'main', url: 'https://github.com/sarikaya38/playwrightKeyWord.git', credentialsId: 'github-pat'
             }
         }
 
