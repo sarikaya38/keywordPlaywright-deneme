@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     environment {
         NODEJS_HOME = tool name: 'NodeJS 14'
         PATH = "${NODEJS_HOME}/bin:${env.PATH}"
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/sarikaya38/playwrightKeyWord.git', credentialsId: 'your-credentials-id'
+                git branch: 'main', url: 'https://github.com/sarikaya38/playwrightKeyWord.git', credentialsId: 'your-credentials-id'
             }
         }
 
